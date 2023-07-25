@@ -10246,7 +10246,10 @@ pub const types = struct {
             PORT: [32]mmio.Mmio(extern union { u8: u8, u16: u16, u32: u32 }),
             reserved0: [864]u32,
             // ITM Trace Enable Register
-            TER: mmio.Mmio(packed struct {}),
+            TER: mmio.Mmio(packed struct(u32) {
+                // SETENA
+                SETENA: u32,
+            }),
         };
 
         ///  Nested Vectored Interrupt Controller
