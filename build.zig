@@ -28,6 +28,7 @@ pub fn build(b: *std.Build) void {
     //     .target = target,
     //     .optimize = optimize,
     // });
+    std.log.debug("Hello\n", .{});
     var exe = microzig.addEmbeddedExecutable(b, .{
         .name = "my-executable",
         .source_file = .{

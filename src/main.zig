@@ -1,6 +1,6 @@
 const std = @import("std");
 const micro = @import("microzig");
-const stm32 = @import("../deps/stm32l562/stm32l562.zig");
+const stm32 = @import("stm32l562.zig");
 const dev = stm32.devices.STM32L562;
 
 pub const HalStatus = enum(u8) { ok, @"error", busy, timeout };
@@ -94,6 +94,7 @@ pub fn systemCoreClockUpdate() void {
 }
 
 pub fn main() void {
+    @compileLog("Magical");
     _ = hal_init();
     // Prints to stderr (it's a shortcut based on `std.io.getStdErr()`)
     // std.debug.print("All your {s} are belong to us.\n", .{"codebase"});
